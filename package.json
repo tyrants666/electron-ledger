@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
+    "electron-is-dev": "^1.1.0",
     "jquery": "^3.4.0",
     "popper.js": "^1.15.0",
     "react": "^15.6.1",
@@ -29,6 +30,10 @@
   "build": {
     "appId": "myledgerapp",
     "extends": null,
+    "files": [
+      "./build/**/*",
+      "./public/electron.js"
+    ],
     "dmg": {
       "contents": [
         {
@@ -50,11 +55,10 @@
       ]
     },
     "win": {
-      "target": "nsis-web",
+      "target": "nsis",
       "icon": "build/icon.png"
     }
   },
-  
   "devDependencies": {
     "axios": "^0.18.0",
     "electron": "^4.1.4",
