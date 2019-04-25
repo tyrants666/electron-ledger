@@ -21,8 +21,7 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "electron": "^4.1.4",
-    "electron-builder": "^20.39.0",
-    "electron-rebuild": "^1.8.4"
+    "electron-builder": "^20.39.0"
   },
   "scripts": {
     "start": "react-scripts start",
