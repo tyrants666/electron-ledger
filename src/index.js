@@ -4,14 +4,14 @@ import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './components/App';
+import Home from './components/Home';
 import Topbar from './inc/Topbar';
 
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
 ReactDOM.render(<Topbar />, document.getElementById('topbar'));
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('home'));
 
 serviceWorker.unregister();
 
