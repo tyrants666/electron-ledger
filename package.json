@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "homepage": "./",
-  "description": "your app description",
+  "description": "Acoount ledger APP",
   "author": "akashyadav.iiita@gmail.com",
   "private": true,
   "dependencies": {
@@ -18,6 +18,12 @@
     "react-scripts": "1.0.10",
     "wait-on": "^3.2.0"
   },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
+    "electron-rebuild": "^1.8.4"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -25,11 +31,12 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \" npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "pack": "build --dir",
-    "prod": "build"
+    "prod": "build",
+    "serve": "nodemon server.js"
   },
   "build": {
     "appId": "myledgerapp",
-    "extends": null,
+    "asar": true,
     "files": [
       "./build/**/*",
       "./public/electron.js"
@@ -57,11 +64,9 @@
     "win": {
       "target": "nsis",
       "icon": "build/icon.png"
+    },
+    "directories": {
+      "buildResources": "public"
     }
-  },
-  "devDependencies": {
-    "axios": "^0.18.0",
-    "electron": "^4.1.4",
-    "electron-builder": "^20.39.0"
   }
 }
