@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Link, Route, Switch, Redirect,NavLink} from 'react-router-dom';
 import './Topbar.css';
+
 
 
 class Topbar extends Component {
 
   render() {
     return (
+
       <div id="title-bar">
             <div id="customer-controls">
+                <div className="button" id="home-button">
+                  <NavLink to="/" className="material-icons">home</NavLink>
+                </div>
                 <div className="button" id="cust-button">
-                  <i className="material-icons">face</i>
+                  <NavLink to="/customers" className="material-icons">face</NavLink>
                 </div>
                 <div className="button" id="add-button">
-                  <i className="material-icons">add</i>
+                  <NavLink to="/customers/add" className="material-icons">add</NavLink>
                 </div>
             </div>
 
@@ -31,9 +38,11 @@ class Topbar extends Component {
                 </div>
             </div>
        </div>
-
     );
   }
 
 }
 export default Topbar;
+// if (document.getElementById('topbar')) {
+//     ReactDOM.render(<Topbar />, document.getElementById('topbar'));
+// }
