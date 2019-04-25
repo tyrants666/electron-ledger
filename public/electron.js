@@ -6,16 +6,15 @@ const path = require('path');
 let win = null;
 
 function createWindow() {
-  win = new BrowserWindow({ width: 1000, height: 600});
-
-
-    // win.loadURL(`file:///${path.join(__dirname, '../build/index.html')}`);
+  win = new BrowserWindow({ width: 1000, height: 600, frame: false, show:false, backgroundColor: '#FFF'});
   win.loadURL(isDev ? 'http://localhost:3000' :`file:///${path.join(__dirname, '../build/index.html')}`);
-  // win.loadURL(isDev ? 'http://localhost:3000' :`file:///${path.join(__dirname, '../build/index.html')}`);
+  win.once('ready-to-show', () => {
+    win.show()
+  })
 
-  // Show dev tools
-  // Remove this line before distributing
-  win.webContents.openDevTools()
+  // win.setIgnoreMouseEvents(true)
+  // win.webContents.openDevTools()
+
 
   // Remove window once app is closed
   win.on('closed', function () {
