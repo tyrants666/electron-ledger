@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './Reactlogo.css';
 
-class App extends Component {
+class Reactlogo extends Component {
   render() {
     return (
       <div className="App">
+
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p className="text-success">
@@ -20,9 +22,10 @@ class App extends Component {
             Learn React
           </a>
         </header>
+
       </div>
     );
   }
 }
 
-export default App;
+export default Reactlogo;
